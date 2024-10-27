@@ -11,7 +11,6 @@ const NewResearch = () => {
   const handleResearchChange = (e) => {
     const newResearch = e.target.value
     setItemToSearch(newResearch)
-    console.log('newResearch: ', newResearch)
   }
 
   const handleGaleryChange = (e) => {

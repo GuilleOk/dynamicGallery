@@ -33,7 +33,6 @@ export const useNewResearch = () => {
         let newGaleryItem = { about: '', galeryContent: [] }
         newGaleryItem = { about: itemToMakeResearch, galeryContent: newPhotos }
         // Verifico si no se repite la búsqueda
-        console.log('newGaleryItem: ', newGaleryItem)
         if (themesReminder.current.length === 0 || !verifyNewTheme({ themesReminder: themesReminder.current, newGaleryItem })) {
           let themes = themesReminder.current
           themes = [...themes, newGaleryItem]
@@ -48,7 +47,6 @@ export const useNewResearch = () => {
           itemToAdd = [...itemToAdd, newGaleryItem]
           const newGallery = { galleryName: galeryToAdd, newGalleryContent: itemToAdd }
           setGalerys([...galerys, newGallery])
-          console.log('galerysName === 0')
         } else if (!verifyGalleryExistance({ gallerysNames: gallerysNames.current, galeryToAdd })) {
         // Añado una galería si esta no existía
         let names = gallerysNames.current
@@ -67,7 +65,6 @@ export const useNewResearch = () => {
       .catch((error) => {
         console.log('something went wrong!', error)
       })
-    // console.log('galerys: ', galerys)
   }
   return { galerys, getItemToSearch }
 }
