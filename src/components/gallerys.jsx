@@ -4,7 +4,6 @@
 import React from 'react'
 
 const Gallerys = ({ galerys }) => {
-  
   return (
     <div>
       {galerys.length === 0
@@ -13,22 +12,16 @@ const Gallerys = ({ galerys }) => {
             {
               galerys.map((gallery, index) => {
                 return (
-                  <div key={'' + gallery.galeryName + '' + index}>
-                    <h2>{gallery.galeryName}</h2>
-                    <h3>{gallery.about}</h3>
-                    {/* {JSON.stringify(gallery.galeryContent)} */}
-                    {gallery.galeryContent.map(photo => {
-                      return <div key={photo.id}><img src={photo.url} /></div>
-                    //   return <div key={photo.id}>{JSON.stringify(photo.url)}</div>
-                    })}
+                  <div key={gallery.galleryName}>
+                    <h2>{gallery.galleryName}</h2>
+                    {gallery.newGalleryContent.map(research => <h3 key={research.about}> {research.about}</h3>)}
                   </div>
                 )
               })
             }
           </div>
       }
-      {/* {JSON.stringify(galerys)}
-      hola */}
+      {/* {JSON.stringify(galerys)} */}
     </div>
   )
 }

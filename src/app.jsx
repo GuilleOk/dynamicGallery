@@ -17,7 +17,6 @@ const NewResearch = () => {
   const handleGaleryChange = (e) => {
     const newGalery = e.target.value
     setGaleryToAdd(newGalery)
-    console.log('first')
   }
 
   const handleSubmit = (e) => {
