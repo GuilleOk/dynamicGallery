@@ -43,16 +43,29 @@ body{
   border: 1px solid slategrey;
   border-radius: 10px;
   font-size: 1.5rem;
+  width: 89%;
+  margin-right: 0.5rem;
 }
 
 .containerSearchButton{
   display: flex;
-  justify-content: center;
+  flex-direction: row;
+  align-items: center;
 }
 
 .searchSubmit{
-  width: 15%;
-  height: 8vh;
+  width: 10%;
+  height: 8%;
+  font-size: 1.5rem;
+  background-color: transparent;
+  border: 1px solid slategrey;
+  padding: 0.05rem;
+}
+
+.searchSubmit:hover{
+  border: 1px solid midnightblue;
+  background-color: transparent;
+  box-shadow: midnightblue 0 0 1rem;
 }
 
 .ContainerApp{
@@ -69,8 +82,12 @@ h1{
   margin: 0;
 }
 
+h1:hover{
+  text-shadow: whitesmoke 0 0 2rem;
+}
+
 h2{
-  font-size: 2.9rem;
+  font-size: 2.07rem;
 }
 
 h3{
@@ -82,19 +99,10 @@ h2,h3{
   margin: 2vh;
 }
 
-img{
-  width: 20vw;
-  height: 40vh;
-  border: .01rem solid whitesmoke;
-  border-radius: 10px;
-  box-shadow: whitesmoke 0 0 3px;
-  margin: 2vh 1vw;
-}
-
 .photosContainer{
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(20vw, 1fr));
-  
+  padding: 0 1vw;  
 }
 
 .galleryContainer{
@@ -102,4 +110,53 @@ img{
   border-radius: 10px;
   box-shadow: white 0 0 2px;
   margin: 3vh 1vw;
+}
+
+.Gallerys{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  padding: 1rem 1rem;
+}
+
+.galleryToShow{
+  border: 0.01rem solid whitesmoke;
+  border-radius: 10px;
+  box-shadow: whitesmoke 0 0 0.21rem;
+  margin: 1rem 0.5rem;
+  min-height: 25rem;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.photoGalleryCollage{
+  width: 90%;
+  height: 70%;
+  border: .01rem solid whitesmoke;
+  border-radius: 10px;
+  box-shadow: whitesmoke 0 0 3px;
+}
+
+.galleryHeader{
+ display: flex;
+ flex-direction: row;
+ justify-content: space-around;
+ align-items: center;
+}
+
+.buttonToShow{
+  background-color: darkblue;
+  font-weight: bold;
+  border: 1px solid wheat;
+  border-radius: 10px;
+  box-shadow: whitesmoke 0 0 1rem;
+  height: 35px;
+}
+
+.buttonToShow:hover{
+  border: 1px solid red;
+  box-shadow: red 0 0 1rem;
+  color: wheat;
 }

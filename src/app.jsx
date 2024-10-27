@@ -37,10 +37,10 @@ const NewResearch = () => {
         <div className='collapse collapse-horizontal' id='collapseform'>
           <div className='card card-body mx-auto' style={{ width: '90%' }}>
             <form onSubmit={handleSubmit}>
-              <input type='text' value={itemToSearch} onChange={handleResearchChange} className='w-100 inputSearch my-1' placeholder='Type for new photos research' required />
               <input type='text' value={galeryToAdd} onChange={handleGaleryChange} className='w-100 inputSearch my-1' placeholder='Type the section where you want to add the images of the current research' />
               <div className='containerSearchButton'>
-                <button className='btn btn-primary searchSubmit mt-3'>Search</button>
+                <input type='text' value={itemToSearch} onChange={handleResearchChange} className='inputSearch my-1' placeholder='Type for new photos research' required />
+                <button className='btn btn-primary searchSubmit'>🔎</button>
               </div>
             </form>
           </div>

@@ -1,9 +1,14 @@
 /* eslint-disable react/jsx-curly-newline */
 /* eslint-disable react/jsx-indent */
 /* eslint-disable react/jsx-closing-tag-location */
-import React from 'react'
+import React, { useState } from 'react'
 
 const Gallerys = ({ galerys }) => {
+  const [showHide, setShowHide] = useState(true)
+
+  const handleShow = () => {
+    setShowHide(!showHide)
+  }
   return (
     <div>
       {galerys.length === 0
@@ -12,9 +17,14 @@ const Gallerys = ({ galerys }) => {
             {
               galerys.map((gallery, index) => {
                 return (
-                  <div key={gallery.galleryName} className='galleryContainer'>
-                    <h2>{gallery.galleryName.toUpperCase()}</h2>
-                    {gallery.newGalleryContent.map(research => {
+                  // <div key={gallery.galleryName} className='galleryContainer'>
+                  <div key={gallery.galleryName} className='galleryToShow'>
+                    <div className='galleryHeader'>
+                      <h2>{gallery.galleryName.toUpperCase()}</h2>
+                      <button className='buttonToShow' onClick={handleShow}>{showHide ? 'Show Gallery' : 'Hide Gallery'}</button>
+                    </div>
+                    <img src={gallery.newGalleryContent[0].galeryContent[0].url} alt={gallery.galleryName} className='photoGalleryCollage' />
+                    {/* {gallery.newGalleryContent.map(research => {
                       return (
                         <div key={research.about}>
                           <h3> {research.about.toUpperCase()}</h3>
@@ -30,7 +40,7 @@ const Gallerys = ({ galerys }) => {
                         </div>
                       )
                     }
-                    )}
+                    )} */}
                   </div>
                 )
               })
