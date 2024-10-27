@@ -31,13 +31,13 @@ const NewResearch = () => {
   return (
     <div className='ContainerApp'>
       <div className='toogleHeaderContainer'>
-        <h1 onClick={handleTypeMessage} data-bs-toggle='collapse' data-bs-target='#collapseform' aria-expanded='false' aria-controls='collapseform'>{typeMessage ? 'Click to search' : 'Click to hide form'}</h1>
+        <h1 onClick={handleTypeMessage} data-bs-toggle='collapse' data-bs-target='#collapseform' aria-expanded='false' aria-controls='collapseform'>{typeMessage ? 'Click to search' : 'Click to hide this form'}</h1>
       </div>
       <div className='toogledContainer'>
         <div className='collapse collapse-horizontal' id='collapseform'>
           <div className='card card-body mx-auto' style={{ width: '90%' }}>
             <form onSubmit={handleSubmit}>
-              <input type='text' value={galeryToAdd} onChange={handleGaleryChange} className='w-100 inputSearch my-1' placeholder='Type the section where you want to add the images of the current research' />
+              <input type='text' value={galeryToAdd} onChange={handleGaleryChange} className='w-100 inputSearch my-1' placeholder='Type the gallery where you want to add the images of the current research' />
               <div className='containerSearchButton'>
                 <input type='text' value={itemToSearch} onChange={handleResearchChange} className='inputSearch my-1' placeholder='Type for new photos research' required />
                 <button className='btn btn-primary searchSubmit'>🔎</button>

@@ -24,7 +24,7 @@ export const useNewResearch = () => {
       galeryToAdd = 'OTHER THINGS'
     }
     api.search
-      .getPhotos({ query: itemToMakeResearch, orientation: 'landscape', per_page: 12 })
+      .getPhotos({ query: itemToMakeResearch, orientation: 'landscape', per_page: 6 })
       .then(result => {
         const arrayResult = result.response.results
         const newPhotos = arrayResult.map(({ id, urls }) => ({ id, url: urls.small }))
