@@ -31,9 +31,7 @@ const NewResearch = () => {
   return (
     <div className='ContainerApp'>
       <div className='toogleButtonContainer'>
-        <button className='btn btn-primary toogleButton' onClick={handleTypeMessage} type='button' data-bs-toggle='collapse' data-bs-target='#collapseform' aria-expanded='false' aria-controls='collapseform'>
-          {typeMessage ? 'Click to search' : 'Click to hide form'}
-        </button>
+        <h1 onClick={handleTypeMessage} data-bs-toggle='collapse' data-bs-target='#collapseform' aria-expanded='false' aria-controls='collapseform'>{typeMessage ? 'Type to search' : 'Type to hide form'}</h1>
       </div>
       <div className='toogledContainer'>
         <div className='collapse collapse-horizontal' id='collapseform'>
