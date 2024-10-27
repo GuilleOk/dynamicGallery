@@ -51,9 +51,36 @@
   padding-bottom: 2rem;
 }
 
+h2{
+  font-size: 3rem;
+}
+
+h3{
+  font-size: 2.3rem;
+}
+
+h2,h3{
+  text-align: center;
+  margin: 2vh;
+}
+
 img{
   width: 20vw;
   height: 40vh;
   border-radius: 10px;
   box-shadow: black 0 0 5px;
+  margin: 2vh 1vw;
+}
+
+.photosContainer{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(20vw, 1fr));
+  
+}
+
+.galleryContainer{
+  border: 1px solid black;
+  border-radius: 10px;
+  box-shadow: black 0 0 2px;
+  margin: 3vh 1vw;
 }

@@ -21,7 +21,7 @@ export const useNewResearch = () => {
     if (itemToSearch.current === itemToMakeResearch) return
     itemToSearch.current = itemToMakeResearch
     if (galeryToAdd === '') {
-      galeryToAdd = 'Other Things'
+      galeryToAdd = 'OTHER THINGS'
     }
     api.search
       .getPhotos({ query: itemToMakeResearch, orientation: 'landscape' })
