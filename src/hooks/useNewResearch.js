@@ -66,5 +66,12 @@ export const useNewResearch = () => {
         console.log('something went wrong!', error)
       })
   }
-  return { galerys, getItemToSearch }
+
+  const erasePhoto = (indexGalleryToShow, indexTheme, indexPhoto) => {
+    galerys[indexGalleryToShow].newGalleryContent[indexTheme].galeryContent.splice(indexPhoto, 1)
+    // setGalerys(galerys)
+    return galerys
+  }
+
+  return { galerys, getItemToSearch, erasePhoto }
 }

@@ -2,11 +2,12 @@
 /* eslint-disable react/jsx-indent */
 /* eslint-disable react/jsx-closing-tag-location */
 import React, { useState } from 'react'
+import PhotoGalleryToShow from './photoGalleryToShow'
 
-const Gallerys = ({ galerys }) => {
+const Gallerys = ({ galerys, erasePhoto }) => {
   const [showHide, setShowHide] = useState(true)
   const [indexGalleryToShow, setIndexGalleryToShow] = useState(null)
-
+  const [prueba, setPrueba] = useState(null)
   const handleShow = (index) => {
     setShowHide(!showHide)
     setIndexGalleryToShow(index)
@@ -45,16 +46,15 @@ const Gallerys = ({ galerys }) => {
                   {/* <form onSubmit={handleSubmit}>
                     <input type='text' placeholder='What do you wanna see of this gallery?' onChange={handleChange} />
                   </form> */}
-                  {galerys[indexGalleryToShow].newGalleryContent.map(galleryItem => {
+                  {JSON.stringify(prueba)}
+                  {galerys[indexGalleryToShow].newGalleryContent.map((galleryItem, indexTheme) => {
                     return (
                       <div key={galleryItem.about}>
                         <h3>{galleryItem.about.toUpperCase()}</h3>
                         <div className='Gallerys'>
-                        {galleryItem.galeryContent.map(photo => {
+                        {galleryItem.galeryContent.length !== 0 && galleryItem.galeryContent.map((photo, i) => {
                           return (
-                            <div key={photo.id} className='actualPhotoContainer'>
-                              <img src={photo.url} alt={galleryItem.about} className='photoGalleryCollage' />
-                            </div>
+                            <PhotoGalleryToShow key={photo.id} url={photo.url} about={galleryItem.about} indexTheme={indexTheme} indexPhoto={i} indexGalleryToShow={indexGalleryToShow} setPrueba={setPrueba} erasePhoto={erasePhoto} />
                           )
                         })}
                         </div>
