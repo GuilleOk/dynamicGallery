@@ -68,9 +68,15 @@ export const useNewResearch = () => {
   }
 
   const erasePhoto = (indexGalleryToShow, indexTheme, indexPhoto) => {
-    galerys[indexGalleryToShow].newGalleryContent[indexTheme].galeryContent.splice(indexPhoto, 1)
-    // setGalerys(galerys)
-    return galerys
+    const updateGallerys = [...galerys]
+    updateGallerys[indexGalleryToShow].newGalleryContent[indexTheme].galeryContent.splice(indexPhoto, 1)
+    if (updateGallerys[indexGalleryToShow].newGalleryContent[indexTheme].galeryContent.length === 0) {
+      updateGallerys[indexGalleryToShow].newGalleryContent.splice(indexTheme, 1)
+    }
+    if (updateGallerys[indexGalleryToShow].newGalleryContent.length === 0) {
+      updateGallerys.splice(indexGalleryToShow, 1)
+    }
+    setGalerys(updateGallerys)
   }
 
   return { galerys, getItemToSearch, erasePhoto }
