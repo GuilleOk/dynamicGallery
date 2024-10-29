@@ -9,14 +9,6 @@ const Gallerys = ({ galerys, erasePhoto }) => {
   const [showHide, setShowHide] = useState(true)
   const [indexGalleryToShow, setIndexGalleryToShow] = useState(null)
   const [prueba, setPrueba] = useState(null)
-  // const [gallerys, setGallerys] = useState(null)
-
-  // useEffect(() => {
-  //   console.log('galerys', galerys)
-  //   if (typeof galerys !== 'undefined') {
-  //     setGallerys(galerys)
-  //   }
-  // }, [galerys])
 
   const handleShow = (index) => {
     setShowHide(!showHide)
