@@ -53,7 +53,7 @@ const Gallerys = ({ galerys, erasePhoto }) => {
                     <h2>{galerys[indexGalleryToShow].galleryName.toUpperCase()}</h2>
                     <button className='buttonToShow' onClick={handleHideGallery}>Hide Gallery</button>
                   </div>
-              <ContentGalleryToShow actualGalleryContent={galerys[indexGalleryToShow]} setPrueba={setPrueba} indexGalleryToShow={indexGalleryToShow} erasePhoto={erasePhoto} prueba={prueba} />
+              <ContentGalleryToShow galleryName={galerys[indexGalleryToShow].galleryName} actualGalleryContent={galerys[indexGalleryToShow]} setPrueba={setPrueba} indexGalleryToShow={indexGalleryToShow} erasePhoto={erasePhoto} prueba={prueba} />
                 </div>
             }
             </div>

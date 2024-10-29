@@ -1,7 +1,7 @@
 import React from 'react'
 import PhotoGalleryToShow from './photoGalleryToShow'
 
-const ContentGalleryToShow = ({ actualGalleryContent, setPrueba, indexGalleryToShow, erasePhoto, prueba }) => {
+const ContentGalleryToShow = ({ galleryName, actualGalleryContent, setPrueba, indexGalleryToShow, erasePhoto, prueba }) => {
   return (
     <div>
       {actualGalleryContent?.newGalleryContent.map((galleryItem, indexTheme) => {
@@ -11,7 +11,7 @@ const ContentGalleryToShow = ({ actualGalleryContent, setPrueba, indexGalleryToS
             <div className='galleryContent'>
               {galleryItem.galeryContent.length !== 0 && galleryItem.galeryContent.map((photo, i) => {
                 return (
-                  <PhotoGalleryToShow key={photo.id} url={photo.url} about={galleryItem.about} indexTheme={indexTheme} indexPhoto={i} indexGalleryToShow={indexGalleryToShow} setPrueba={setPrueba} erasePhoto={erasePhoto} />
+                  <PhotoGalleryToShow key={photo.id} actualTheme={galleryItem.about} galleryName={galleryName} url={photo.url} about={galleryItem.about} indexTheme={indexTheme} indexPhoto={i} indexGalleryToShow={indexGalleryToShow} setPrueba={setPrueba} erasePhoto={erasePhoto} />
                 )
               })}
             </div>

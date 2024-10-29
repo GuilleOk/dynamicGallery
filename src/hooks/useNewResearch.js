@@ -67,14 +67,18 @@ export const useNewResearch = () => {
       })
   }
 
-  const erasePhoto = (indexGalleryToShow, indexTheme, indexPhoto) => {
+  const erasePhoto = (indexGalleryToShow, indexTheme, indexPhoto, galleryName, actualTheme) => {
     const updateGallerys = [...galerys]
     updateGallerys[indexGalleryToShow].newGalleryContent[indexTheme].galeryContent.splice(indexPhoto, 1)
     if (updateGallerys[indexGalleryToShow].newGalleryContent[indexTheme].galeryContent.length === 0) {
       updateGallerys[indexGalleryToShow].newGalleryContent.splice(indexTheme, 1)
+      const auxthemeArray = [...themesReminder.current]
+      themesReminder.current = [...auxthemeArray.filter(item => item.about !== actualTheme)]
     }
     if (updateGallerys[indexGalleryToShow].newGalleryContent.length === 0) {
       updateGallerys.splice(indexGalleryToShow, 1)
+      const auxGalleryNames = [...gallerysNames.current]
+      gallerysNames.current = [...auxGalleryNames.filter(item => item !== galleryName)]
     }
     setGalerys(updateGallerys)
   }
