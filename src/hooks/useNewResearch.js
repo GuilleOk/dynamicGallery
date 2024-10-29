@@ -18,7 +18,9 @@ export const useNewResearch = () => {
   })
 
   const getItemToSearch = ({ itemToMakeResearch, galeryToAdd }) => {
-    if (itemToSearch.current === itemToMakeResearch) return
+    if (galerys.length === 0) {
+      itemToSearch.current = ''
+    } else if (itemToSearch.current === itemToMakeResearch) return
     itemToSearch.current = itemToMakeResearch
     if (galeryToAdd === '') {
       galeryToAdd = 'OTHER THINGS'
