@@ -120,10 +120,13 @@ h2,h3{
   min-height: 25rem;
   padding: 1rem;
   display: flex;
+  min-width: 20rem;
   width: 25rem;
+  padding-top: 2rem;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  position: relative;
 }
 
 .galleryHeader{
@@ -162,6 +165,7 @@ h2,h3{
   justify-content: center;
   align-items: center;
   position: relative;
+  min-width: 20rem;
   padding: 1rem;
   margin: 1rem 0;
   max-width: 30rem;
@@ -179,12 +183,26 @@ h2,h3{
   border: transparent;
 }
 
+.eliminarGaleria{
+  z-index: 1000;
+  position: absolute;
+  font-size: 1.8rem;
+  right: 0;
+  top: 0;
+  margin: 0;
+  padding: 0;
+  background-color: transparent;
+  border: transparent;
+}
+
 .photoGalleryCollage{
   width: 90%;
+  min-width: 10rem;
   height: 18rem;
   border: .01rem solid whitesmoke;
   border-radius: 10px;
   box-shadow: whitesmoke 0 0 3px;
+  min-width: 20rem;
 }
 
 .galleryContent{

@@ -85,5 +85,21 @@ export const useNewResearch = () => {
     setGalerys(updateGallerys)
   }
 
-  return { galerys, getItemToSearch, erasePhoto }
+  const eraseGallery = (index, name) => {
+    const updateGallerys = [...galerys]
+    const temas = [...themesReminder.current]
+    const temasDefinitivos = temas.filter(tema =>
+      !updateGallerys[index].newGalleryContent.some(galleryItem => galleryItem.about === tema.about)
+    )
+
+    themesReminder.current = temasDefinitivos
+    const names = [...gallerysNames.current]
+    const auxNames = names.filter(Name => Name !== name)
+    gallerysNames.current = auxNames
+    updateGallerys.splice(index, 1)
+    itemToSearch.current = ''
+    setGalerys(updateGallerys)
+  }
+
+  return { galerys, getItemToSearch, erasePhoto, eraseGallery }
 }

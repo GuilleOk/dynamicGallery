@@ -3,7 +3,7 @@ import { useNewResearch } from './hooks/useNewResearch'
 import Gallerys from './components/gallerys'
 
 const NewResearch = () => {
-  const { galerys, getItemToSearch, erasePhoto } = useNewResearch()
+  const { galerys, getItemToSearch, erasePhoto, eraseGallery } = useNewResearch()
   const [itemToSearch, setItemToSearch] = useState('')
   const [galeryToAdd, setGaleryToAdd] = useState('')
   const [typeMessage, setTypeMessage] = useState(true)
@@ -27,6 +27,14 @@ const NewResearch = () => {
     setTypeMessage(!typeMessage)
   }
 
+  const handleItemFocus = () => {
+    setItemToSearch('')
+  }
+
+  const handleGalleryFocus = () => {
+    setGaleryToAdd('')
+  }
+
   return (
     <div className='ContainerApp'>
       <div className='toogleHeaderContainer'>
@@ -36,16 +44,16 @@ const NewResearch = () => {
         <div className='collapse collapse-horizontal' id='collapseform'>
           <div className='card card-body mx-auto' style={{ width: '90%' }}>
             <form onSubmit={handleSubmit}>
-              <input type='text' value={galeryToAdd} onChange={handleGaleryChange} className='w-100 inputSearch my-1' placeholder='Type the gallery where you want to add the images of the current research' />
+              <input type='text' value={galeryToAdd} onChange={handleGaleryChange} onFocus={handleGalleryFocus} className='w-100 inputSearch my-1' placeholder='Type the gallery where you want to add the images of the current research' />
               <div className='containerSearchButton'>
-                <input type='text' value={itemToSearch} onChange={handleResearchChange} className='inputSearch my-1' placeholder='Type for new photos research' required />
+                <input type='text' value={itemToSearch} onChange={handleResearchChange} onFocus={handleItemFocus} className='inputSearch my-1' placeholder='Type for new photos research' required />
                 <button className='btn btn-primary searchSubmit'>🔎</button>
               </div>
             </form>
           </div>
         </div>
       </div>
-      <Gallerys galerys={galerys} erasePhoto={erasePhoto} />
+      <Gallerys galerys={galerys} erasePhoto={erasePhoto} eraseGallery={eraseGallery} />
     </div>
   )
 }

@@ -5,7 +5,7 @@
 import React, { useState } from 'react'
 import ContentGalleryToShow from './contentGalleryToShow'
 
-const Gallerys = ({ galerys, erasePhoto }) => {
+const Gallerys = ({ galerys, erasePhoto, eraseGallery }) => {
   const [showHide, setShowHide] = useState(true)
   const [indexGalleryToShow, setIndexGalleryToShow] = useState(null)
   const [prueba, setPrueba] = useState(null)
@@ -18,6 +18,10 @@ const Gallerys = ({ galerys, erasePhoto }) => {
   const handleHideGallery = () => {
     setShowHide(!showHide)
     setIndexGalleryToShow(null)
+  }
+
+  const handleEraseGallery = (index, { name }) => {
+    eraseGallery(index, name)
   }
 
   return (
@@ -35,6 +39,7 @@ const Gallerys = ({ galerys, erasePhoto }) => {
                       <div className={showHide ? 'galleryToShow' : 'd-none'}>
                           <div className='galleryHeader'>
                             <h2>{gallery.galleryName.toUpperCase()}</h2>
+                            <button className='eliminarGaleria' onClick={() => handleEraseGallery(index, { name: gallery.galleryName })}>❌</button>
                             <button className='buttonToShow' onClick={() => handleShow(index)}>Show Gallery</button>
                           </div>
                           <img src={gallery.newGalleryContent[0].galeryContent[0]?.url} alt={gallery.galleryName} className='photoGalleryCollage' />
