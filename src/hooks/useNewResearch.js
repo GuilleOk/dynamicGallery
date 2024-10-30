@@ -103,10 +103,9 @@ export const useNewResearch = () => {
 
   const eraseTehme = ({ indexGalleryToShow, indexTheme, theme }) => {
     const updateGallery = [...galerys]
-    if (itemToSearch.current === theme) {
-      itemToSearch.current = ''
-    }
-    themesReminder.current = [...themesReminder.current.filter(item => item !== theme)]
+    itemToSearch.current = itemToSearch.current === theme ? '' : itemToSearch.current
+
+    themesReminder.current = [...themesReminder.current.filter(item => item.about !== theme)]
     updateGallery[indexGalleryToShow].newGalleryContent.splice(indexTheme, 1)
     if (updateGallery[indexGalleryToShow].newGalleryContent.length === 0) {
       const nameGallery = updateGallery[indexGalleryToShow].galleryName

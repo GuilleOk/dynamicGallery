@@ -3,7 +3,6 @@ import PhotoGalleryToShow from './photoGalleryToShow'
 
 const ContentGalleryToShow = ({ galleryName, actualGalleryContent, indexGalleryToShow, erasePhoto, eraseTehme }) => {
   const handleEraseTheme = ({ indexTheme, theme }) => {
-    console.log('theme: ', theme)
     eraseTehme({ indexGalleryToShow, indexTheme, theme })
   }
   return (
