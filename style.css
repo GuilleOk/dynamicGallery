@@ -210,3 +210,17 @@ h2,h3{
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   padding: 0;
 }
+
+.galleryHeader{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: .7rem;
+}
+
+.buttonEraseTheme{
+  background-color: transparent;
+  border: transparent;
+  font-size: x-large;
+}

@@ -101,5 +101,20 @@ export const useNewResearch = () => {
     setGalerys(updateGallerys)
   }
 
-  return { galerys, getItemToSearch, erasePhoto, eraseGallery }
+  const eraseTehme = ({ indexGalleryToShow, indexTheme, theme }) => {
+    const updateGallery = [...galerys]
+    if (itemToSearch.current === theme) {
+      itemToSearch.current = ''
+    }
+    themesReminder.current = [...themesReminder.current.filter(item => item !== theme)]
+    updateGallery[indexGalleryToShow].newGalleryContent.splice(indexTheme, 1)
+    if (updateGallery[indexGalleryToShow].newGalleryContent.length === 0) {
+      const nameGallery = updateGallery[indexGalleryToShow].galleryName
+      gallerysNames.current = gallerysNames.current.filter(name => name !== nameGallery)
+      updateGallery.splice(indexGalleryToShow, 1)
+    }
+    setGalerys(updateGallery)
+  }
+
+  return { galerys, getItemToSearch, erasePhoto, eraseGallery, eraseTehme }
 }

@@ -3,7 +3,7 @@ import { useNewResearch } from './hooks/useNewResearch'
 import Gallerys from './components/gallerys'
 
 const NewResearch = () => {
-  const { galerys, getItemToSearch, erasePhoto, eraseGallery } = useNewResearch()
+  const { galerys, getItemToSearch, erasePhoto, eraseGallery, eraseTehme } = useNewResearch()
   const [itemToSearch, setItemToSearch] = useState('')
   const [galeryToAdd, setGaleryToAdd] = useState('')
   const [typeMessage, setTypeMessage] = useState(true)
@@ -53,7 +53,7 @@ const NewResearch = () => {
           </div>
         </div>
       </div>
-      <Gallerys galerys={galerys} erasePhoto={erasePhoto} eraseGallery={eraseGallery} />
+      <Gallerys galerys={galerys} erasePhoto={erasePhoto} eraseGallery={eraseGallery} eraseTehme={eraseTehme} />
     </div>
   )
 }

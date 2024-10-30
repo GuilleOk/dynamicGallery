@@ -5,10 +5,9 @@
 import React, { useState } from 'react'
 import ContentGalleryToShow from './contentGalleryToShow'
 
-const Gallerys = ({ galerys, erasePhoto, eraseGallery }) => {
+const Gallerys = ({ galerys, erasePhoto, eraseGallery, eraseTehme }) => {
   const [showHide, setShowHide] = useState(true)
   const [indexGalleryToShow, setIndexGalleryToShow] = useState(null)
-  const [prueba, setPrueba] = useState(null)
 
   const handleShow = (index) => {
     setShowHide(!showHide)
@@ -58,7 +57,7 @@ const Gallerys = ({ galerys, erasePhoto, eraseGallery }) => {
                     <h2>{galerys[indexGalleryToShow]?.galleryName.toUpperCase()}</h2>
                     <button className='buttonToShow' onClick={handleHideGallery}>Hide Gallery</button>
                 </div>
-              {galerys[indexGalleryToShow] !== undefined && <ContentGalleryToShow galleryName={galerys[indexGalleryToShow].galleryName} actualGalleryContent={galerys[indexGalleryToShow]} setPrueba={setPrueba} indexGalleryToShow={indexGalleryToShow} erasePhoto={erasePhoto} prueba={prueba} />}
+              {galerys[indexGalleryToShow] !== undefined && <ContentGalleryToShow galleryName={galerys[indexGalleryToShow].galleryName} actualGalleryContent={galerys[indexGalleryToShow]} indexGalleryToShow={indexGalleryToShow} erasePhoto={erasePhoto} eraseTehme={eraseTehme} />}
                 </div>
             }
             </div>
