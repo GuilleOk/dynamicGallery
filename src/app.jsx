@@ -38,7 +38,7 @@ const NewResearch = () => {
   return (
     <div className='ContainerApp'>
       <div className='toogleHeaderContainer'>
-        <h1 onClick={handleTypeMessage} data-bs-toggle='collapse' data-bs-target='#collapseform' aria-expanded='false' aria-controls='collapseform'>{typeMessage ? 'Click to search' : 'Click to hide this form'}</h1>
+        <h1 onClick={handleTypeMessage} data-bs-toggle='collapse' data-bs-target='#collapseform' aria-expanded='false' aria-controls='collapseform' data-testid='open'>{typeMessage ? 'Click to search' : 'Click to hide this form'}</h1>
       </div>
       <div className='toogledContainer'>
         <div className='collapse collapse-horizontal' id='collapseform'>
@@ -46,7 +46,7 @@ const NewResearch = () => {
             <form onSubmit={handleSubmit}>
               <input type='text' value={galeryToAdd} onChange={handleGaleryChange} onFocus={handleGalleryFocus} className='w-100 inputSearch my-1' placeholder='Type the gallery where you want to add the images of the current research' />
               <div className='containerSearchButton'>
-                <input type='text' value={itemToSearch} onChange={handleResearchChange} onFocus={handleItemFocus} className='inputSearch my-1' placeholder='Type for new photos research' required />
+                <input type='text' value={itemToSearch} onChange={handleResearchChange} aria-label='fotoResearch' onFocus={handleItemFocus} className='inputSearch my-1' placeholder='Type for new photos research' required />
                 <button className='btn btn-primary searchSubmit'>🔎</button>
               </div>
             </form>

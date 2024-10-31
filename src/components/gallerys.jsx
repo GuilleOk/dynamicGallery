@@ -35,9 +35,9 @@ const Gallerys = ({ galerys, erasePhoto, eraseGallery, eraseTehme }) => {
                   <div key={gallery.galleryName}>
                     {
                       gallery.newGalleryContent.length !== 0 &&
-                      <div className={showHide ? 'galleryToShow' : 'd-none'}>
+                      <div className={showHide ? 'galleryToShow' : 'd-none'} name='gallery'>
                           <div className='galleryHeader'>
-                            <h2>{gallery.galleryName.toUpperCase()}</h2>
+                            <h2 id={gallery.galleryName}>{gallery.galleryName.toUpperCase()}</h2>
                             <button className='eliminarGaleria' onClick={() => handleEraseGallery(index, { name: gallery.galleryName })}>❌</button>
                             <button className='buttonToShow' onClick={() => handleShow(index)}>Show Gallery</button>
                           </div>
